@@ -1,0 +1,13 @@
+{
+	"packageDirectories": [
+	  {
+		"path": "force-app",
+		"default": true
+	  }
+	],
+	"name": "CriblProject",
+	"namespace": "",
+	"sfdcLoginUrl": "https://playful-otter-9t3u54-dev-ed.trailblaze.my.salesforce.com/",
+	"sourceApiVersion": "59.0"
+  }
+  
