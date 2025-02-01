@@ -112,6 +112,9 @@ public static void syncTasksFromMonday(String boardId) {
                 Monday_Task__c existingTask = existingTasksMap.get(taskId);
                 if (existingTask.Task_Name__c != taskName) {
                     existingTask.Task_Name__c = taskName;
+                    existingTask.Board_id__c = boardId;
+                    existingTask.Monday_Task_id__c = taskId;
+                    existingTask.Status__c = 'New';
                     tasksToUpsert.add(existingTask);
                 }
             } else {

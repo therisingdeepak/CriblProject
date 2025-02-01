@@ -24,7 +24,8 @@
  * Author: Deepak Dhakal
  */
 global class MondayTaskBatch implements Database.Batchable<sObject> {
-    static final String board = '8349247067';
+    //static final String board = '8349247067';
+    static final String board = ConfigHelper.getBoardId();
     global Database.QueryLocator start(Database.BatchableContext BC) {
         return Database.getQueryLocator([SELECT Id FROM Monday_Task__c]); // Placeholder query
     }

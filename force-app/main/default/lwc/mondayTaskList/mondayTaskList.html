@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="Monday Tasks" icon-name="standard:task">
+        
+        <!-- Radio Button to Select Board -->
+        <div class="slds-p-around_medium">
+            <lightning-radio-group name="boardSelector"
+                                   label="Select Board to Refresh"
+                                   options={boardOptions}
+                                   value={selectedBoard}
+                                   type="radio"
+                                   onchange={handleBoardSelection}>
+            </lightning-radio-group>
+        </div>
+
+        <!-- Refresh Button -->
+        <div class="slds-p-around_medium">
+            <lightning-button label="Sync Tasks With Monday.Com" 
+                              variant="brand" 
+                              onclick={handleRefresh} 
+                              disabled={isLoading}>
+            </lightning-button>
+        </div>
+
+        <!-- Data Table to Show Last 20 Tasks -->
+        <div class="slds-p-around_medium">
+            <template if:true={tasks}>
+                <lightning-datatable key-field="Monday_Task_Id__c"
+                                     data={tasks}
+                                     columns={columns}
+                                     hide-checkbox-column="true">
+                </lightning-datatable>
+            </template>
+            <template if:false={tasks}>
+                <p>No tasks available.</p>
+            </template>
+        </div>
+
+    </lightning-card>
+</template>
