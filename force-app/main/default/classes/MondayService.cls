@@ -154,9 +154,7 @@ public static void syncTasksFromMonday(String boardId) {
     private static String callMondayAPI(String query) {
         Http http = new Http();
         HttpRequest request = new HttpRequest();
-        //request.setEndpoint('callout:MondayAPI);
-        request.setEndpoint('https://api.monday.com/v2');
-        request.setHeader('Authorization', 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjQ2NTMwNjYxOCwiYWFpIjoxMSwidWlkIjo3MTUyMzcwOCwiaWFkIjoiMjAyNS0wMS0zMFQwNDoyMToyOC4xNDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6Mjc3MzE5MzAsInJnbiI6InVzZTEifQ.nX6T44VQkYBlkHuiD1QlqEMczPA8bkKwLprdKbflx8U');
+        request.setEndpoint('callout:MondayAPI');
         request.setMethod('POST');
         request.setHeader('Content-Type', 'application/json');
         request.setBody(query);
